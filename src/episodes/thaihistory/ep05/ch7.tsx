@@ -89,7 +89,7 @@ const Wires = ({ start, gap = 3, pulse = 1e9 }: { start: number; gap?: number; p
 const HardBorder = ({ k }: { k: number }) => (k > 0 ? <Empire areas={[["thai", "#fff3c0", k]]} pulse={false} /> : null);
 
 // A local lord under a parasol receives his people in a provincial hall (before centralisation).
-const LordScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const LordScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.ubon} start={start} end={end} sky={["#6a4a3a", "#e8b070"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -106,7 +106,7 @@ const LordScene = ({ id, start, end }: { id: string; start: number; end: number 
 );
 
 // A Bangkok commissioner arrives at the new monthon office: Siamese flag, uniformed escort, the old lord steps aside.
-const CommissionerScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
+export const CommissionerScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
   <V2 id={id} anchor={PL.ubon} start={start} end={end} sky={["#7aa0c8", "#f0dcb0"]} accent={GOLD} hits={hits} warm={0.08}>
     {(g, pan, lt) => {
       const walk = interpolate(lt, [0, end - start], [0, 110], clamp) * g.s;
@@ -127,7 +127,7 @@ const CommissionerScene = ({ id, start, end, hits }: { id: string; start: number
 );
 
 // Night gathering of villagers with torches around a man in white — the Holy Man revolt (approximate, no likeness).
-const HolyManScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const HolyManScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.ubon} start={start} end={end} sky={["#0e1226", "#3a2430"]} accent={RED} warm={0.05}>
     {(g, pan) => (
       <g>
@@ -153,7 +153,7 @@ const HolyManScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Government troops march through monsoon rain along a paddy dyke.
-const RainMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const RainMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.phrae} start={start} end={end} sky={["#3a4250", "#6a7480"]} accent={RED} warm={0.03}>
     {(g, pan, lt) => {
       const span = g.W / g.s + 200;
@@ -173,7 +173,7 @@ const RainMarchScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // Morning in a village yard: people walk out of the old master's compound as free people (1905 act).
-const FreedomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const FreedomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#f0b880", "#fff0d0"]} accent={GOLD} warm={0.14}>
     {(g, pan, lt) => {
       const walk = interpolate(lt, [0, end - start], [0, 140], clamp) * g.s;
@@ -195,7 +195,7 @@ const FreedomScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Recruitment under a big village tree: an officer with a ledger at a table, young men walking up in a line.
-const ConscriptScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
+export const ConscriptScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#8ab0d0", "#f4e8c8"]} accent={GOLD} hits={hits} warm={0.08}>
     {(g, pan, lt) => {
       const walk = interpolate(lt, [0, end - start], [0, 90], clamp) * g.s;
@@ -220,7 +220,7 @@ const ConscriptScene = ({ id, start, end, hits }: { id: string; start: number; e
 );
 
 // A village school sala: children sit before a teacher while the national flag goes up the pole — one country.
-const SchoolFlagScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const SchoolFlagScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.korat} start={start} end={end} sky={["#f0a868", "#ffeccc"]} accent={GOLD} hits={hits} warm={0.12}>

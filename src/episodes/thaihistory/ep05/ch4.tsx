@@ -108,7 +108,7 @@ const MapFlash = ({ at: c, hits }: { at: [number, number]; hits: number[] }) => 
 // --- illustrated panels (style v2) ---------------------------------------------------------------------------
 
 // The Mekong: a French officer and flag on the far (left) bank, a Siamese guard on the near bank, a boat crossing.
-const MekongScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MekongScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={[104.0, 17.6]} start={start} end={end} sky={["#7a9ac0", "#f0d8b0"]} accent={FR_C}>
     {(g, pan, lt) => (
       <g>
@@ -130,7 +130,7 @@ const MekongScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // Pavie on the trail to Luang Prabang with Lao porters; the gilt stupa on the hill behind.
-const PavieScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const PavieScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.luangprabang} start={start} end={end} sky={["#8aa0c0", "#f4e0b8"]} accent={FR_C}>
     {(g, pan, lt) => (
       <g>
@@ -147,7 +147,7 @@ const PavieScene = ({ id, start, end }: { id: string; start: number; end: number
 );
 
 // A riverside stockade in the mist: Siamese and French riflemen exchange fire.
-const OutpostScene = ({ id, start, end, shots }: { id: string; start: number; end: number; shots: number[] }) => {
+export const OutpostScene = ({ id, start, end, shots }: { id: string; start: number; end: number; shots: number[] }) => {
   const frame = useCurrentFrame();
   const fl = (n: number) => Math.max(0, ...shots.filter((_, i) => i % 2 === n).map((h) => interpolate(frame - h, [0, 2, 12], [0, 1, 0], clamp)));
   return (
@@ -169,7 +169,7 @@ const OutpostScene = ({ id, start, end, shots }: { id: string; start: number; en
 };
 
 // Two French gunboats steam in from the gulf toward the river mouth at dusk.
-const ApproachScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ApproachScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bar} start={start} end={end} sky={["#2a2a4a", "#e08850"]} accent={RED} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -184,7 +184,7 @@ const ApproachScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // The set piece: Phra Chulachomklao fort fires; the gunboats answer and force their way past through the splashes.
-const FortScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const FortScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.paknam} start={start} end={end} sky={["#3a2a3a", "#d07040"]} accent={RED} hits={HITS} warm={0.1}>
@@ -218,7 +218,7 @@ const FortScene = ({ id, start, end }: { id: string; start: number; end: number 
 };
 
 // Anchored in the river before the French legation: the gunboat's gun swings round toward the palace roofs.
-const AnchorScene = ({ id, start, end, turn }: { id: string; start: number; end: number; turn: number }) => {
+export const AnchorScene = ({ id, start, end, turn }: { id: string; start: number; end: number; turn: number }) => {
   const frame = useCurrentFrame();
   const beam = interpolate(frame, [turn, turn + 16], [0, 1], clamp);
   return (
@@ -243,7 +243,7 @@ const AnchorScene = ({ id, start, end, turn }: { id: string; start: number; end:
 };
 
 // Blockade: French gunboats strung across the hazy gulf; a British ship far off steams away.
-const BlockadeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BlockadeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={[100.6, 12.8]} start={start} end={end} sky={["#6a7a8a", "#c8c8b8"]} accent={FR_C} warm={0.03}>
     {(g, pan, lt) => (
       <g>
@@ -257,7 +257,7 @@ const BlockadeScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // A dark sickroom: one lamp, a desk with paper and pen, the mosquito net — no figure drawn.
-const SickroomScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const SickroomScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#120e14", "#2a1e1a"]} accent={GOLD} warm={0.08}>
@@ -285,7 +285,7 @@ const SickroomScene = ({ id, start, end }: { id: string; start: number; end: num
 };
 
 // Treaty signing: French envoy and Siamese minister at a table, pen and sealed document under candles.
-const SigningScene = ({ id, start, end, sign }: { id: string; start: number; end: number; sign: number }) => {
+export const SigningScene = ({ id, start, end, sign }: { id: string; start: number; end: number; sign: number }) => {
   const frame = useCurrentFrame();
   const seal = interpolate(frame, [sign, sign + 8], [0, 1], clamp);
   return (
@@ -311,7 +311,7 @@ const SigningScene = ({ id, start, end, sign }: { id: string; start: number; end
 };
 
 // Siamese troops march away from the Mekong past a "25 กม." post.
-const WithdrawScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const WithdrawScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={[103.3, 18.0]} start={start} end={end} sky={["#7a8aa8", "#f0d8b0"]} accent={FR_C}>
     {(g, pan, lt) => (
       <g>
@@ -331,7 +331,7 @@ const WithdrawScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // The price in silver: an open chest of coins and a balance weighing sacks of money.
-const SilverScene = ({ id, start, end, three }: { id: string; start: number; end: number; three: number }) => {
+export const SilverScene = ({ id, start, end, three }: { id: string; start: number; end: number; three: number }) => {
   const frame = useCurrentFrame();
   const tilt = interpolate(frame, [three - 6, three + 14], [6, -14], clamp);
   return (

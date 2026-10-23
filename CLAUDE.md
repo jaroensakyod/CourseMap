@@ -59,6 +59,13 @@ what you will set up. Re-check after any hardware change.
 
 ## 2. Making videos
 
+**New episodes are storyboard episodes: JSON only, no scene code** (`references/storyboard.md`, scene list
+`references/scenes.md`, example `src/episodes/examples/ayutthaya-island/`). The cycle, each a single command that costs
+no Claude tokens: `npm run new -- <channel>/<ep> "title"` → write `beats.json` + `episode.json` → `npm run episode --
+<slug>` (validator + ONE contact sheet) → `--voice` → `--render`. Write TSX only if the student explicitly asks for a
+custom scene; a new scene goes in `src/storyboard/scenes/`, then `npm run sb:scenes`, add it to
+`src/storyboard/catalog.json`, `npm run sb:docs`.
+
 - The production method is the skill in `.claude/skills/map-studio/SKILL.md` (read it, then only the
   `references/` file each step needs). Its **house standard** applies to every video: news look on real satellite
   imagery, a new picture every 3–4 s cued on the spoken word, illustration style v2, real library sound, **clear

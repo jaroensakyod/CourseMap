@@ -89,7 +89,7 @@ const FireDots = ({ start, end }: { start: number; end: number }) => {
 };
 
 // --- chaos: canal-side houses burn, people flee, black smoke ---
-const CanalFireScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const CanalFireScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#1a0e10", "#7a3218"]} accent={RED} hits={BURN}>
@@ -114,7 +114,7 @@ const CanalFireScene = ({ id, start, end }: { id: string; start: number; end: nu
 };
 
 // --- anurak: the cell door swings open, the chains fall ---
-const JailScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const JailScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   const open = sk(frame, BREAK, BREAK + 14);
   return (
@@ -171,7 +171,7 @@ const ArmedScene = ({ id, start, end }: { id: string; start: number; end: number
 };
 
 // --- waver: rebels on the palisade look east, waiting for Chakri's army ---
-const WaitScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const WaitScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#e8b080", "#a8c0d8"]} accent={GOLD}>
     {(g, pan) => (
       <g>
@@ -212,7 +212,7 @@ const MakrukScene = ({ id, start, end }: { id: string; start: number; end: numbe
 };
 
 // --- news: a rider gallops through the rain towards Cambodia ---
-const CourierScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const CourierScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   const flash = frame >= THUNDER && frame < THUNDER + 8 ? 1 - (frame - THUNDER) / 8 : 0;
   return (
@@ -235,7 +235,7 @@ const CourierScene = ({ id, start, end }: { id: string; start: number; end: numb
 };
 
 // --- news: in the camp in Cambodia, a kneeling messenger hands Chakri the letter ---
-const LetterScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const LetterScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.siemreap} start={start} end={end} sky={["#1e1a24", "#3a2e2a"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -290,7 +290,7 @@ const TruceScene = ({ id, start, end }: { id: string; start: number; end: number
 };
 
 // --- bangkoknoi: the column from Khorat comes down off the plateau ---
-const KoratMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const KoratMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.korat} start={start} end={end} sky={["#9ab8d0", "#f0e0c0"]} accent={GOLD}>
     {(g, pan, lt) => (
       <g>
@@ -313,7 +313,7 @@ const KoratMarchScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // --- bangkoknoi: clash on the canal bank, muskets firing (Shot + impact on GUNS) ---
-const CanalBattleScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const CanalBattleScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bangkokNoi} start={start} end={end} sky={["#6a5a6a", "#d8a878"]} accent={RED} hits={[...GUNS, ...CLASH]}>
@@ -378,7 +378,7 @@ const VictoryScene = ({ id, start, end }: { id: string; start: number; end: numb
 };
 
 // --- quiz2: Chakri on the bank at dusk, looking across the river towards the capital ---
-const GazeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const GazeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#2a2a5a", "#e09a6a"]} accent={GOLD} warm={0.06}>
     {(g, pan) => (
       <g>

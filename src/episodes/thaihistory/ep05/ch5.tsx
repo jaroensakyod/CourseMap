@@ -149,7 +149,7 @@ const BufferFieldsScene = ({ id, start, end }: { id: string; start: number; end:
 };
 
 // The royal yacht steams west across the morning sea (seen from afar, no royal likeness).
-const VoyageScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const VoyageScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.colombo} start={start} end={end} sky={["#f0b078", "#a8c8e0"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -164,7 +164,7 @@ const VoyageScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // A European ballroom, wide: chandeliers, a row of guests standing as equals (small, no faces).
-const BallroomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BallroomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.paris} start={start} end={end} sky={["#3a2418", "#8a5a30"]} accent={GOLD} warm={0.14}>
     {(g, pan) => (
       <g>

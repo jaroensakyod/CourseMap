@@ -3,6 +3,7 @@ import { Thumbnail, type ThumbProps } from "./components/Thumbnail";
 import { DATA_TOUR_FRAMES, DataTour } from "./episodes/datatour/DataTour";
 import { MAP_TEST_FRAMES, MapTest } from "./episodes/test/MapTest";
 import { ThaiHistoryCompositions } from "./episodes/thaihistory/compositions";
+import { StoryboardCompositions } from "./storyboard/Compositions";
 
 const MapTestThumb = (p: ThumbProps) => (
   <Thumbnail {...p}>
@@ -23,6 +24,8 @@ export const Root = () => (
     <Composition id="DataTour" component={DataTour} durationInFrames={DATA_TOUR_FRAMES} fps={30} width={1920} height={1080} />
     {/* ตัวอย่างเต็ม: ประวัติศาสตร์บนแผนที่ EP.5 (Ep05Clear = มาตรฐานปัจจุบัน, Ep05Demo = 30 วินาทีแรก) */}
     <ThaiHistoryCompositions />
+    {/* ตอนที่ทำด้วย storyboard (beats.json + episode.json) → SB-<ช่อง>-<ตอน> และ ScenePreview */}
+    <StoryboardCompositions />
     <Composition id="DataTourVertical" component={DataTour} durationInFrames={DATA_TOUR_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

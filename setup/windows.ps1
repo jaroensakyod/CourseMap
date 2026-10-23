@@ -50,6 +50,7 @@ function Install-CourseMap {
     npm.cmd install --no-audit --no-fund | Out-Host
     if ($LASTEXITCODE -ne 0) { Warn 'npm install ไม่ผ่าน — ส่งภาพหน้าจอนี้ให้ครู'; return }
     Ok 'ลงแพ็กเกจแล้ว'
+    node scripts/sb-sync.mjs | Out-Null
 
     Step '3/9 ไฟล์ .env (ที่ใส่ Gemini API key)'
     if (Test-Path '.env') { Ok 'มี .env แล้ว (ไม่ทับ)' } else { Copy-Item '.env.example' '.env'; Ok 'สร้าง .env แล้ว' }

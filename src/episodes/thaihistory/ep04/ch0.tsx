@@ -47,7 +47,7 @@ const QuestionMark = () => {
 };
 
 // Night: the palace burns behind its wall while a small boat slips away down the river.
-const NightRiverScene = ({ id, start, end, boat = true }: { id: string; start: number; end: number; boat?: boolean }) => (
+export const NightRiverScene = ({ id, start, end, boat = true }: { id: string; start: number; end: number; boat?: boolean }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#0b1026", "#3a1f2a"]} accent={RED} warm={0.04}>
     {(g, pan, lt) => (
       <g>
@@ -66,7 +66,7 @@ const NightRiverScene = ({ id, start, end, boat = true }: { id: string; start: n
 );
 
 // The king on his throne; nobles prostrate before him in warm lamplight.
-const ThroneScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ThroneScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#3a1a10", "#8a4a22"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -83,7 +83,7 @@ const ThroneScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // Rebels storm the palace gate at night; guards hold the wall.
-const StormGateScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const StormGateScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#120b1e", "#5a2a1a"]} accent={RED} hits={hits}>
@@ -108,7 +108,7 @@ const StormGateScene = ({ id, start, end, hits }: { id: string; start: number; e
 };
 
 // A scribe's table: Thai manuscript, a Chinese scroll and a French letter side by side under one candle.
-const ArchiveScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ArchiveScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -132,7 +132,7 @@ const ArchiveScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Moonlit Wat Arun across the river, an empty landing — the question.
-const MoonPrangScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MoonPrangScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.watArun} start={start} end={end} sky={["#0a1430", "#2a3a6a"]} accent={GOLD} warm={0.03}>
     {(g, pan) => (
       <g>

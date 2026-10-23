@@ -206,7 +206,7 @@ const Birds = ({ g, n = 5 }: { g: G; n?: number }) => {
 // ---------- scenes (each used at most twice in the episode) ----------
 
 // 1. Morning on the river: Wat Pho's chedis through the mist, slanting sun, a moored boat.
-const DawnRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const DawnRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.watPho} start={start} end={end} sky={["#8fb6d6", "#f6d6a2"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -228,7 +228,7 @@ const DawnRiverScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // 2. Chakri's army arrives before Wat Pho: columns with banners marching in the low morning sun.
-const ArmyArriveScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ArmyArriveScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.watPho} start={start} end={end} sky={["#a9c4dc", "#f4cf96"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => {
       const march = lt * 0.9 * g.s;
@@ -255,7 +255,7 @@ const ArmyArriveScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // 3. The landing: nobles prostrate in a row as a canopied barge comes in to the steps; townspeople behind.
-const LandingScene = ({ id, start, end, dock }: { id: string; start: number; end: number; dock: number }) => {
+export const LandingScene = ({ id, start, end, dock }: { id: string; start: number; end: number; dock: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#9cc0da", "#f2dcb0"]} accent={GOLD} warm={0.08}>
@@ -287,7 +287,7 @@ const LandingScene = ({ id, start, end, dock }: { id: string; start: number; end
 };
 
 // 4. Waiting: the old palace gate shut, guards still, banners slack under a pale morning sky.
-const GateWaitScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const GateWaitScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#b9c3cc", "#e8dcc4"]} accent={RED} warm={0.04}>
     {(g, pan) => (
       <g>
@@ -308,7 +308,7 @@ const GateWaitScene = ({ id, start, end }: { id: string; start: number; end: num
 
 // 5. The trial: officials seated under a pavilion; the accused prostrate in the yard; at the sentence a sword's
 // shadow falls across the ground (no blow is shown).
-const TrialScene = ({ id, start, end, sentence }: { id: string; start: number; end: number; sentence: number }) => {
+export const TrialScene = ({ id, start, end, sentence }: { id: string; start: number; end: number; sentence: number }) => {
   const frame = useCurrentFrame();
   const sh = interpolate(frame, [sentence, sentence + 14], [0, 1], clamp);
   return (
@@ -342,7 +342,7 @@ const TrialScene = ({ id, start, end, sentence }: { id: string; start: number; e
 
 // 6. The chronicle: a folding-book manuscript open by a candle. Used twice (decide, ask); `royal` adds a gilt frame
 // and the tag of the royal-autograph recension.
-const ChronicleScene = ({ id, start, end, royal = false }: { id: string; start: number; end: number; royal?: boolean }) => (
+export const ChronicleScene = ({ id, start, end, royal = false }: { id: string; start: number; end: number; royal?: boolean }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={PALE} warm={0.1}>
     {(g, pan, lt) => {
       const mw = 360 * g.s;
@@ -373,7 +373,7 @@ const ChronicleScene = ({ id, start, end, royal = false }: { id: string; start: 
 );
 
 // 7. The council: nobles in rows bowing toward a closed curtain at the head of the hall (no figure shown).
-const CouncilScene = ({ id, start, end, agree }: { id: string; start: number; end: number; agree: number }) => {
+export const CouncilScene = ({ id, start, end, agree }: { id: string; start: number; end: number; agree: number }) => {
   const frame = useCurrentFrame();
   const bow = interpolate(frame, [agree - 4, agree + 16], [0, 1], clamp);
   return (
@@ -400,7 +400,7 @@ const CouncilScene = ({ id, start, end, agree }: { id: string; start: number; en
 };
 
 // 8. Memory: two banners planted side by side on an old campaign field at dusk, two horses grazing (sepia).
-const MemoryFieldScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MemoryFieldScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#c9925a", "#f2d39a"]} accent={GOLD} warm={0.14}>
     {(g, pan) => (
       <g>
@@ -417,7 +417,7 @@ const MemoryFieldScene = ({ id, start, end }: { id: string; start: number; end: 
 );
 
 // 9. A curtain lit from behind by a flickering candle; the shadow of a hand waves "no". Quiet.
-const CurtainScene = ({ id, start, end, waveAt }: { id: string; start: number; end: number; waveAt: number }) => {
+export const CurtainScene = ({ id, start, end, waveAt }: { id: string; start: number; end: number; waveAt: number }) => {
   const frame = useCurrentFrame();
   const flick = 1 + Math.sin(frame * 0.9) * 0.05 + Math.sin(frame * 2.1) * 0.03;
   const up = interpolate(frame, [waveAt - 18, waveAt], [0, 1], clamp);
@@ -463,7 +463,7 @@ const CurtainScene = ({ id, start, end, waveAt }: { id: string; start: number; e
 };
 
 // 10. The riverside fort (Wichai Prasit) in afternoon light; the flag comes down to half-mast; the landing is empty.
-const FortScene = ({ id, start, end, lower }: { id: string; start: number; end: number; lower: number }) => {
+export const FortScene = ({ id, start, end, lower }: { id: string; start: number; end: number; lower: number }) => {
   const frame = useCurrentFrame();
   const half = interpolate(frame, [lower, lower + 60], [0, 1], { ...clamp, easing: (t) => t * t * (3 - 2 * t) });
   return (
@@ -509,7 +509,7 @@ const FortScene = ({ id, start, end, lower }: { id: string; start: number; end: 
 };
 
 // 11. Dusk on the river: Wat Arun's prang against the sunset, birds going home, an empty boat rocking.
-const DuskRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const DuskRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.watArun} start={start} end={end} sky={["#4a3a6a", "#e88a5a"]} accent={PALE} warm={0.08}>
@@ -537,7 +537,7 @@ const DuskRiverScene = ({ id, start, end }: { id: string; start: number; end: nu
 };
 
 // 12. The new reign: a palace hall at dawn, banners and royal umbrellas, nobles kneeling toward an empty gilded throne.
-const EmptyThroneScene = ({ id, start, end, rise }: { id: string; start: number; end: number; rise: number }) => {
+export const EmptyThroneScene = ({ id, start, end, rise }: { id: string; start: number; end: number; rise: number }) => {
   const frame = useCurrentFrame();
   const light = interpolate(frame, [rise - 10, rise + 30], [0.3, 1], clamp);
   return (
@@ -574,7 +574,7 @@ const EmptyThroneScene = ({ id, start, end, rise }: { id: string; start: number;
 };
 
 // 13. The gong is struck in the palace courtyard at morning (one strike per entry in `hits`).
-const GongScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const GongScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   const last = hits.filter((h) => frame >= h).pop();
   const since = last === undefined ? 99 : frame - last;
@@ -619,7 +619,7 @@ const GongScene = ({ id, start, end, hits }: { id: string; start: number; end: n
 };
 
 // 14. The city pillar is hauled upright with ropes on an auspicious morning; monks chant beside it.
-const PillarScene = ({ id, start, end, up }: { id: string; start: number; end: number; up: number }) => {
+export const PillarScene = ({ id, start, end, up }: { id: string; start: number; end: number; up: number }) => {
   const frame = useCurrentFrame();
   const a = interpolate(frame, [start + 10, up], [58, 0], { ...clamp, easing: (t) => 1 - Math.pow(1 - t, 2) });
   const settle = frame >= up && frame < up + 8 ? 1 - (frame - up) / 8 : 0;
@@ -665,7 +665,7 @@ const PillarScene = ({ id, start, end, up }: { id: string; start: number; end: n
 };
 
 // 15. Moving east: boats loaded with goods cross the river toward the new city's rising walls.
-const CrossingScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const CrossingScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.pillar} start={start} end={end} sky={["#8fbad8", "#f6dcb0"]} accent={GOLD} warm={0.08}>
     {(g, pan, lt) => (
       <g>

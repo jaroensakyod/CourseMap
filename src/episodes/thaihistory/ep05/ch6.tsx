@@ -154,7 +154,7 @@ const MekongFlagScene = ({ id, start, end }: { id: string; start: number; end: n
 };
 
 // A coastal town of the east (Trat): palms, stilt houses, boats; a flag on the pier and troops marching.
-const CoastScene = ({ id, start, end, flag, march }: { id: string; start: number; end: number; flag: FlagKind; march: "fr" | "siam" }) => (
+export const CoastScene = ({ id, start, end, flag, march }: { id: string; start: number; end: number; flag: FlagKind; march: "fr" | "siam" }) => (
   <V2 id={id} anchor={PL.trat} start={start} end={end} sky={flag === "fr" ? ["#4a5a7a", "#d8b890"] : ["#f0c080", "#a8d0e8"]} accent={flag === "fr" ? FR_C : GOLD} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -201,7 +201,7 @@ const BoundaryScene = ({ id, start, end }: { id: string; start: number; end: num
 };
 
 // Angkor Wat at dawn: five towers, mist on the moat, monks walking on the causeway.
-const AngkorScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const AngkorScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.angkor} start={start} end={end} sky={["#3a3a6a", "#f0a868"]} accent={GOLD} warm={0.12}>
     {(g, pan, lt) => (
       <g>

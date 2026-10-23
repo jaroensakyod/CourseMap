@@ -71,7 +71,7 @@ const REVEAL = T.end - 2;
 type Sc = { id: string; start: number; end: number };
 
 // A scribe writes by candlelight; shelves of folded manuscripts behind him.
-const ScribeScene = ({ id, start, end }: Sc) => {
+export const ScribeScene = ({ id, start, end }: Sc) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={GOLD} warm={0.1}>
@@ -99,7 +99,7 @@ const ScribeScene = ({ id, start, end }: Sc) => {
 };
 
 // A later court: scribes kneel in a row copying manuscripts inside a lamp-lit hall.
-const CopyHallScene = ({ id, start, end }: Sc) => (
+export const CopyHallScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#24160e", "#4a2a18"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -121,7 +121,7 @@ const CopyHallScene = ({ id, start, end }: Sc) => (
 );
 
 // Wat Bang Yi Ruea by its canal at night: lit hall windows, a moored boat, moon over palms.
-const WatCanalScene = ({ id, start, end }: Sc) => (
+export const WatCanalScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.bangYiRuea} start={start} end={end} sky={["#0a1430", "#2a3a5a"]} accent={GOLD} warm={0.04}>
     {(g, pan) => (
       <g>
@@ -138,7 +138,7 @@ const WatCanalScene = ({ id, start, end }: Sc) => (
 );
 
 // Inside the wooden sala: one candle, incense smoke, a figure in white seated in meditation; moonlight through posts.
-const MeditationScene = ({ id, start, end }: Sc) => (
+export const MeditationScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.bangYiRuea} start={start} end={end} sky={["#0a0c18", "#1a1a2a"]} accent={GOLD} warm={0.06}>
     {(g, pan) => (
       <g>
@@ -159,7 +159,7 @@ const MeditationScene = ({ id, start, end }: Sc) => (
 );
 
 // A French missionary writes at a lectern; through the window, the prang of Thonburi.
-const PriestScene = ({ id, start, end }: Sc) => (
+export const PriestScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#2a2018", "#4a3424"]} accent={GOLD} warm={0.08}>
     {(g, pan) => (
       <g>
@@ -216,7 +216,7 @@ const LetterScene = ({ id, start, end }: Sc) => {
 };
 
 // An outsider's view: the mission chapel by the river, the missionary outside, Siamese townsfolk passing.
-const ChapelScene = ({ id, start, end }: Sc) => (
+export const ChapelScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#8ab0c8", "#f4e2b8"]} accent={GOLD} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -257,7 +257,7 @@ const ShipScene = ({ id, start, end }: Sc) => {
 };
 
 // The king on his throne, lit as if from within, speaks to the court (as the chronicle tells it).
-const DeclareScene = ({ id, start, end }: Sc) => (
+export const DeclareScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#2a140c", "#6a3418"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -277,7 +277,7 @@ const DeclareScene = ({ id, start, end }: Sc) => (
 );
 
 // The senior monks seated in rows in the ordination hall, a Buddha image behind them in candlelight.
-const AssemblyScene = ({ id, start, end }: Sc) => (
+export const AssemblyScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#2a140c", "#5a2a14"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -301,7 +301,7 @@ const AssemblyScene = ({ id, start, end }: Sc) => (
 );
 
 // The senior monks who answered "no": seated elders with a fan, palace guards arriving.
-const ElderScene = ({ id, start, end }: Sc) => (
+export const ElderScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#3a2a2a", "#7a5a48"]} accent={RED} warm={0.06}>
     {(g, pan, lt) => (
       <g>
@@ -320,7 +320,7 @@ const ElderScene = ({ id, start, end }: Sc) => (
 );
 
 // A grey courtyard: rows of monks kneel, heads bowed; long chain shadows across the paving; guards behind.
-const CourtyardScene = ({ id, start, end }: Sc) => (
+export const CourtyardScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#5a5a68", "#a8a0a0"]} accent={RED} warm={0.02}>
     {(g, pan, lt) => (
       <g>
@@ -338,7 +338,7 @@ const CourtyardScene = ({ id, start, end }: Sc) => (
 );
 
 // Informers in the palace: whispering figures behind a pillar; rice on the scales, salt sacks; nobles prostrate.
-const WhisperScene = ({ id, start, end }: Sc) => {
+export const WhisperScene = ({ id, start, end }: Sc) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#24160e", "#4a2a18"]} accent={RED} warm={0.08}>
@@ -366,7 +366,7 @@ const WhisperScene = ({ id, start, end }: Sc) => {
 };
 
 // Fines: nobles prostrate before an official seated by an open chest of silver.
-const FinesScene = ({ id, start, end }: Sc) => (
+export const FinesScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#2a140c", "#5a2a14"]} accent={RED} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -449,7 +449,7 @@ const TreasureShadow = ({ id, start, end }: Sc) => {
 };
 
 // The tribute mission: a junk with red sails and gilt chests heads out to sea for China.
-const TributeScene = ({ id, start, end }: Sc) => (
+export const TributeScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#6a9ac8", "#f0e0c0"]} accent={GOLD} warm={0.06}>
     {(g, pan, lt) => (
       <g>
@@ -488,7 +488,7 @@ const VietScene = ({ id, start, end }: Sc) => {
 };
 
 // The prince who is to rule Cambodia rides in a palanquin under a parasol, guards and banners around him.
-const PalanquinScene = ({ id, start, end }: Sc) => (
+export const PalanquinScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.kabin} start={start} end={end} sky={["#e0985a", "#f8e0b0"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => {
       const go = lt * 0.6 * g.s;
@@ -515,7 +515,7 @@ const PalanquinScene = ({ id, start, end }: Sc) => (
 );
 
 // The capital left behind: an empty palace forecourt at dusk, one guard; the army's dust far off on the horizon.
-const EmptyCapitalScene = ({ id, start, end }: Sc) => (
+export const EmptyCapitalScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#4a3a5a", "#d08a5a"]} accent={RED} warm={0.06}>
     {(g, pan, lt) => (
       <g>

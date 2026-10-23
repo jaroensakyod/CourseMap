@@ -59,7 +59,7 @@ const SCROLL_OPEN = T.china2 + 18;
 
 // A monastery library: lacquered manuscript cabinet, a reader kneeling at a stand, dusk through the window.
 // variant "faded": close on the oldest chronicle — the writing fades and one short line glows.
-const ChronicleScene = ({ id, start, end, variant = "stand", lineF = 1e9 }: { id: string; start: number; end: number; variant?: "stand" | "faded"; lineF?: number }) => {
+export const ChronicleScene = ({ id, start, end, variant = "stand", lineF = 1e9 }: { id: string; start: number; end: number; variant?: "stand" | "faded"; lineF?: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={variant === "faded" ? PL.fort : PL.thon} start={start} end={end} sky={["#3a2a4a", "#e09a5a"]} accent={GOLD} warm={0.1}>
@@ -118,7 +118,7 @@ const ChronicleScene = ({ id, start, end, variant = "stand", lineF = 1e9 }: { id
 };
 
 // A Qing court hall at dawn: a scroll unrolls on the table; the column 子鄭華 is brushed in after 鄭昭 / 昭卒.
-const ChineseScrollScene = ({ id, start, end, open, zhaoF, huaF }: { id: string; start: number; end: number; open: number; zhaoF: number; huaF: number }) => {
+export const ChineseScrollScene = ({ id, start, end, open, zhaoF, huaF }: { id: string; start: number; end: number; open: number; zhaoF: number; huaF: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.beijing} start={start} end={end} sky={["#f0c27a", "#f6e2b0"]} accent={CHINA_C} warm={0.08}>
@@ -190,7 +190,7 @@ const ChineseScrollScene = ({ id, start, end, open, zhaoF, huaF }: { id: string;
 };
 
 // The Hue court: a scribe writes with a brush in an open pavilion; the citadel gate in the misty hills behind.
-const VietScribeScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const VietScribeScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.hue} start={start} end={end} sky={["#7d93a6", "#e2d2b0"]} accent={VIET_C} warm={0.05}>
@@ -232,7 +232,7 @@ const VietScribeScene = ({ id, start, end }: { id: string; start: number; end: n
 };
 
 // Today: a historian's desk at night — lamp light, open books, rain on the window over a lit city.
-const HistorianScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const HistorianScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#0e1626", "#1e2a40"]} accent={GOLD} warm={0.06}>

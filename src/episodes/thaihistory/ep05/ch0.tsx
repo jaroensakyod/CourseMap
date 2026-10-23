@@ -85,7 +85,7 @@ const DayCard = () => {
 };
 
 // Two gunboats, British from the west and French from the east, close in at dusk on a small Siamese boat.
-const SqueezeSeaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const SqueezeSeaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#2a1a3a", "#d0703a"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => {
       const close = interpolate(lt, [0, end - start], [0, 1], clamp);
@@ -109,7 +109,7 @@ const SqueezeSeaScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // The Grand Palace at dawn — the young kingdom's centre (no royal likeness drawn).
-const PalaceDawnScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const PalaceDawnScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#1f2a4a", "#e8a060"]} accent={GOLD} warm={0.12}>
     {(g, pan, lt) => (
       <g>
@@ -130,7 +130,7 @@ const PalaceDawnScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // Morning at a shrine table: garland, candles, a gilt frame turned away — the day of remembrance.
-const GarlandScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const GarlandScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#f0c890", "#fff0d0"]} accent={GOLD} warm={0.14}>

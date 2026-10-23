@@ -51,7 +51,7 @@ const STAMP = T.uk + 6;
 // ---------------- panels ----------------
 
 // Beach camp at Wa Ko: tents, officials and foreign astronomers walk along the shore under the morning sun.
-const WakoCampScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const WakoCampScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.wako} start={start} end={end} sky={["#6aa0c8", "#f4d8a0"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -70,7 +70,7 @@ const WakoCampScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // Totality: the sun goes dark over the sea, stars come out, people look up.
-const TotalityScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const TotalityScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.wako} start={start} end={end} sky={["#141a30", "#4a4a6a"]} accent={GOLD} warm={0.03}>
     {(g, pan, lt) => {
       const k = interpolate(lt, [0, 50], [0.55, 1], clamp);
@@ -92,7 +92,7 @@ const TotalityScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // Malaria: mangrove swamp at night, mosquitoes swarm in the damp mist.
-const FeverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const FeverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.wako} start={start} end={end} sky={["#0e1a1e", "#2a3a34"]} accent={RED} warm={0.03}>
     {(g, pan) => (
       <g>
@@ -108,7 +108,7 @@ const FeverScene = ({ id, start, end }: { id: string; start: number; end: number
 );
 
 // Mourning: the hall at night, nobles prostrate in white before candles.
-const MourningScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MourningScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#14121e", "#2a2430"]} accent={GOLD} warm={0.05}>
     {(g, pan) => (
       <g>
@@ -125,7 +125,7 @@ const MourningScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // The royal barge rows home up the river at dusk, carrying the sick prince.
-const BargeHomeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BargeHomeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#3a2a4a", "#e0905a"]} accent={GOLD} warm={0.12}>
     {(g, pan, lt) => (
       <g>
@@ -140,7 +140,7 @@ const BargeHomeScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // The new king, seen from behind on the high throne; nobles kneel far below.
-const YoungThroneScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const YoungThroneScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#3a1a10", "#8a4a22"]} accent={GOLD} warm={0.14}>
     {(g, pan) => (
       <g>
@@ -156,7 +156,7 @@ const YoungThroneScene = ({ id, start, end }: { id: string; start: number; end: 
 );
 
 // The regent's council: officials around a low table of documents and seals.
-const RegentCouncilScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const RegentCouncilScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#2a1a10", "#6a3a1a"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -175,7 +175,7 @@ const RegentCouncilScene = ({ id, start, end }: { id: string; start: number; end
 );
 
 // The Bunnag household by the river: a mansion with a western ship moored in front.
-const BunnagRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BunnagRiverScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#7aa8c8", "#f0d8a8"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -193,7 +193,7 @@ const BunnagRiverScene = ({ id, start, end }: { id: string; start: number; end: 
 );
 
 // Bowring treaty: British envoy and Siamese official at a table, flags behind; the seal comes down.
-const TreatyScene = ({ id, start, end, stamp }: { id: string; start: number; end: number; stamp: number }) => {
+export const TreatyScene = ({ id, start, end, stamp }: { id: string; start: number; end: number; stamp: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#3a2a1a", "#7a5a3a"]} accent={BRIT_C} hits={[stamp]} warm={0.1}>
@@ -224,7 +224,7 @@ const TreatyScene = ({ id, start, end, stamp }: { id: string; start: number; end
 };
 
 // Customs at the river port: crates from western ships, an official's balance tips the wrong way.
-const CustomsScene = ({ id, start, end, three }: { id: string; start: number; end: number; three: number }) => {
+export const CustomsScene = ({ id, start, end, three }: { id: string; start: number; end: number; three: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#8ab0c8", "#f0dcb0"]} accent={RED} warm={0.08}>
@@ -247,7 +247,7 @@ const CustomsScene = ({ id, start, end, three }: { id: string; start: number; en
 };
 
 // Bangkok roadstead: ships of several nations at anchor, each with its own flag.
-const RoadsteadScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const RoadsteadScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#5a8ab8", "#e8d0a0"]} accent={GOLD} warm={0.08}>
     {(g, pan) => (
       <g>
@@ -264,7 +264,7 @@ const RoadsteadScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // Arriving at Singapore: a steamer flying the Siamese flag enters a harbour lined with colonial buildings.
-const SingaporeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const SingaporeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.singapore} start={start} end={end} sky={["#6aa0d0", "#f4e0b0"]} accent={GOLD} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -280,7 +280,7 @@ const SingaporeScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // A colonial street: British soldiers march past a government building while locals watch.
-const ColonyStreetScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ColonyStreetScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.calcutta} start={start} end={end} sky={["#c8a878", "#f4e4c0"]} accent={BRIT_C} warm={0.12}>
     {(g, pan, lt) => (
       <g>
@@ -296,7 +296,7 @@ const ColonyStreetScene = ({ id, start, end }: { id: string; start: number; end:
 );
 
 // Coronation: the gilt hall blazes with lamps, parasols, nobles prostrate; fireworks outside.
-const CoronationScene = ({ id, start, end, rite }: { id: string; start: number; end: number; rite: number }) => (
+export const CoronationScene = ({ id, start, end, rite }: { id: string; start: number; end: number; rite: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#1a1030", "#5a2a3a"]} accent={GOLD} warm={0.14}>
     {(g, pan) => (
       <g>
@@ -314,7 +314,7 @@ const CoronationScene = ({ id, start, end, rite }: { id: string; start: number; 
 );
 
 // Late night at the writing desk: a lamp, papers, a figure from behind at work.
-const DeskScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const DeskScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#10121e", "#2a2430"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>

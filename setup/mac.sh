@@ -45,6 +45,7 @@ cd "$PROJECT" || exit 1
 step "3/9 npm install (ครั้งแรก 2-5 นาที)"
 npm install --no-audit --no-fund || { warn "npm install ไม่ผ่าน — ส่งภาพหน้าจอนี้ให้ครู"; exit 1; }
 ok "ลงแพ็กเกจแล้ว"
+node scripts/sb-sync.mjs >/dev/null
 
 step "4/9 ไฟล์ .env (ที่ใส่ Gemini API key)"
 if [ -f .env ]; then ok "มี .env แล้ว (ไม่ทับ)"; else cp .env.example .env; ok "สร้าง .env แล้ว"; fi

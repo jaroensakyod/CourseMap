@@ -39,7 +39,7 @@ const OAR = T.answer + 24;
 
 // Dawn over the Chao Phraya: Wat Arun far off in the haze, one small boat on the golden water.
 // variant "morning": the sun higher, the boat further on, someone resting on the bank.
-const DawnRiverScene = ({ id, start, end, variant = "dawn" }: { id: string; start: number; end: number; variant?: "dawn" | "morning" }) => {
+export const DawnRiverScene = ({ id, start, end, variant = "dawn" }: { id: string; start: number; end: number; variant?: "dawn" | "morning" }) => {
   const frame = useCurrentFrame();
   const m = variant === "morning";
   return (
@@ -77,7 +77,7 @@ const DawnRiverScene = ({ id, start, end, variant = "dawn" }: { id: string; star
 };
 
 // A reader at a library table: four books in the four sources' colours, morning light from the window.
-const ReaderScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const ReaderScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#e8d8b0", "#f6ecd0"]} accent={GOLD} warm={0.08}>

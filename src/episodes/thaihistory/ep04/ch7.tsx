@@ -119,7 +119,7 @@ const LegendShadow = ({ id, start, end }: { id: string; start: number; end: numb
 };
 
 // A print shop around 2492: the press stamps, the first book of the legend lies on the desk.
-const PressScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const PressScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#3a3428", "#6a5a40"]} accent={GOLD} warm={0.1} hits={PRESS}>
@@ -181,7 +181,7 @@ const PressScene = ({ id, start, end }: { id: string; start: number; end: number
 };
 
 // Night at Wat Chaeng: torches, guards with spears ringed round a closed pavilion, nobles watching.
-const GuardedScene = ({ id, start, end, guardF }: { id: string; start: number; end: number; guardF: number }) => {
+export const GuardedScene = ({ id, start, end, guardF }: { id: string; start: number; end: number; guardF: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.watArun} start={start} end={end} sky={["#0c1226", "#2a2440"]} accent={RED} warm={0.05}>
@@ -217,7 +217,7 @@ const GuardedScene = ({ id, start, end, guardF }: { id: string; start: number; e
 };
 
 // Golden evening at a Taksin shrine: garlands, incense smoke, people bowing.
-const ShrineScene = ({ id, start, end, bowF }: { id: string; start: number; end: number; bowF: number }) => {
+export const ShrineScene = ({ id, start, end, bowF }: { id: string; start: number; end: number; bowF: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#e0803a", "#ffd890"]} accent={GOLD} warm={0.14}>

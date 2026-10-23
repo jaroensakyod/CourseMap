@@ -51,7 +51,7 @@ const SAIGON_SHOTS = [T.saigon - 6, T.saigon + 18, T.saigon + 44];
 // ---------------- panels ----------------
 
 // Rangoon river: British gunboats anchored below the golden stupa.
-const RangoonScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const RangoonScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.rangoon} start={start} end={end} sky={["#7a9ac0", "#f0d0a0"]} accent={BRIT_C} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -67,7 +67,7 @@ const RangoonScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Steamers carry red-coated troops up the Irrawaddy.
-const IrrawaddyScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const IrrawaddyScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.mandalay} start={start} end={end} sky={["#8aa0b8", "#e8d8b0"]} accent={BRIT_C} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -86,7 +86,7 @@ const IrrawaddyScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // British soldiers line up before the tiered roofs of Mandalay palace.
-const MandalayScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MandalayScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.mandalay} start={start} end={end} sky={["#c88a5a", "#f4d8a0"]} accent={BRIT_C} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -102,7 +102,7 @@ const MandalayScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // The last Burmese king leaves by boat at dusk; his parasol lowered, people watch from the bank.
-const ExileScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const ExileScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.mandalay} start={start} end={end} sky={["#2a1a30", "#c8603a"]} accent={RED} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -119,7 +119,7 @@ const ExileScene = ({ id, start, end }: { id: string; start: number; end: number
 );
 
 // Malaya: a British resident's house above a tin-mining river, a gunboat at the jetty.
-const MalayaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MalayaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.penang} start={start} end={end} sky={["#6aa0b8", "#e8e0b0"]} accent={BRIT_C} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -136,7 +136,7 @@ const MalayaScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // Saigon: French gunboats shell a riverside fort; cannon answer, smoke rolls.
-const SaigonScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const SaigonScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.saigon} start={start} end={end} sky={["#5a6a7a", "#e8b080"]} accent={FR_C} hits={hits} warm={0.1}>
@@ -161,7 +161,7 @@ const SaigonScene = ({ id, start, end, hits }: { id: string; start: number; end:
 };
 
 // Oudong: the Khmer royal court; a French tricolour rises beside the palace.
-const OudongScene = ({ id, start, end, raise }: { id: string; start: number; end: number; raise: number }) => {
+export const OudongScene = ({ id, start, end, raise }: { id: string; start: number; end: number; raise: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.oudong} start={start} end={end} sky={["#7a8ab0", "#f0d0a0"]} accent={FR_C} warm={0.1}>
@@ -187,7 +187,7 @@ const OudongScene = ({ id, start, end, raise }: { id: string; start: number; end
 };
 
 // French troops march on the gate of a Vietnamese citadel.
-const CitadelScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const CitadelScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.hanoi} start={start} end={end} sky={["#6a7a8a", "#d8c0a0"]} accent={FR_C} warm={0.08}>
     {(g, pan, lt) => (
       <g>
@@ -204,7 +204,7 @@ const CitadelScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Indochina proclaimed: a tricolour over a colonial building at sunset, a bugler.
-const IndochinaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const IndochinaScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.hue} start={start} end={end} sky={["#2a2a4a", "#e08a5a"]} accent={FR_C} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -219,7 +219,7 @@ const IndochinaScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // Squeeze: a lone Siamese sentry on a hill, red storm to the west, blue storm to the east.
-const SentryScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const SentryScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#2a2030", "#5a4a5a"]} accent={GOLD} warm={0.06}>
@@ -244,7 +244,7 @@ const SentryScene = ({ id, start, end }: { id: string; start: number; end: numbe
 };
 
 // Officers bent over a map table: red and blue areas, Siam in the middle.
-const MapRoomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MapRoomScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#2a2018", "#5a4030"]} accent={RED} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -262,7 +262,7 @@ const MapRoomScene = ({ id, start, end }: { id: string; start: number; end: numb
 );
 
 // Race against time: an hourglass over the gold of Siam, sand running.
-const HourglassScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const HourglassScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#1a1428", "#4a3a2a"]} accent={GOLD} warm={0.12}>
     {(g, pan, lt) => (
       <g>

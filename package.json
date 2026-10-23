@@ -28,7 +28,15 @@
     "setup:data": "node setup/data.mjs",
     "setup:whisper": "node setup/whisper.mjs",
     "doctor": "node setup/doctor.mjs",
-    "demo": "node setup/demo.mjs"
+    "demo": "node setup/demo.mjs",
+    "episode": "node scripts/episode.mjs",
+    "new": "node scripts/sb-new.mjs",
+    "sb:sync": "node scripts/sb-sync.mjs",
+    "sb:check": "node scripts/sb-check.mjs",
+    "sb:scenes": "node scripts/sb-scenes.mjs",
+    "sb:catalog": "node scripts/sb-catalog.mjs",
+    "sheet": "node scripts/sheet.mjs",
+    "sb:docs": "node scripts/sb-docs.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",

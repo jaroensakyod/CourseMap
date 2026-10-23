@@ -64,7 +64,7 @@ const CROSS: [number, number][] = [[100.492, 13.772], [100.4955, 13.762], [100.4
 const sk = (frame: number, a: number, b: number) => interpolate(frame, [a, b], [0, 1], clamp);
 
 // --- spark: villagers dig in the ruins of the old capital by torchlight ---
-const RuinDigScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const RuinDigScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.ayut} start={start} end={end} sky={["#141026", "#4a2a2a"]} accent={GOLD} warm={0.06} hits={DIG}>
@@ -137,7 +137,7 @@ const UprisingScene = ({ id, start, end }: { id: string; start: number; end: num
 };
 
 // --- phrayasan: the Sankhaburi column marches out under gold banners ---
-const SanMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const SanMarchScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.sanburi} start={start} end={end} sky={["#7aa6c9", "#f3d9b0"]} accent={GOLD}>
     {(g, pan, lt) => {
       const walk = lt * 0.9 * g.s;
@@ -200,7 +200,7 @@ const TurnCoatScene = ({ id, start, end }: { id: string; start: number; end: num
 };
 
 // --- brother: Phraya San and his brother Khun Kaeo clasp hands in a riverside camp at dusk ---
-const BrothersScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BrothersScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.ayut} start={start} end={end} sky={["#3a2a4a", "#d0804a"]} accent={RED} warm={0.1}>
     {(g, pan) => {
       const cx = g.x + g.W * 0.5 + pan * 0.7;
@@ -237,7 +237,7 @@ const BrothersScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // --- brother: the ร.5 remark, pictured — an oarless boat in the reeds, turned whichever way the wind blows ---
-const DriftScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const DriftScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   const wind = Math.sin((frame - start) * 0.045);
   return (
@@ -263,7 +263,7 @@ const DriftScene = ({ id, start, end }: { id: string; start: number; end: number
 };
 
 // --- march: the rebel boats come down the Chao Phraya at sunset ---
-const RebelFleetScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const RebelFleetScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.ramanya} start={start} end={end} sky={["#4a2a3a", "#e08a4a"]} accent={RED}>
     {(g, pan, lt) => (
       <g>
@@ -287,7 +287,7 @@ const RebelFleetScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // --- night: boats slip across the dark river towards the palace wall ---
-const NightCrossScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const NightCrossScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#060a1c", "#1c1f3a"]} accent={RED} warm={0.02}>
     {(g, pan, lt) => (
       <g>
@@ -313,7 +313,7 @@ const NightCrossScene = ({ id, start, end }: { id: string; start: number; end: n
 );
 
 // --- night: ladders on the palace wall; defenders fire down (Shot + impact on SHOTS) ---
-const WallAssaultScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const WallAssaultScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#0c0818", "#4a1e1a"]} accent={RED} hits={SHOTS}>
@@ -357,7 +357,7 @@ const WallAssaultScene = ({ id, start, end }: { id: string; start: number; end: 
 };
 
 // --- loyal: the palace guard holds the gate by torchlight ---
-const GateGuardScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const GateGuardScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#120c20", "#5a2a1a"]} accent={GOLD} hits={CLASH}>
@@ -421,7 +421,7 @@ const OathScene = ({ id, start, end }: { id: string; start: number; end: number 
 };
 
 // --- surrender: morning over the smoking wall; the palace gate opens ---
-const MorningGateScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const MorningGateScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#e8a87a", "#f8e0b8"]} accent={GOLD} hits={[GATE]}>
@@ -442,7 +442,7 @@ const MorningGateScene = ({ id, start, end }: { id: string; start: number; end: 
 };
 
 // --- ordain: a court lady writes her memoir by the morning window ---
-const MemoirScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const MemoirScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#3a2414", "#5a3a20"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -464,7 +464,7 @@ const MemoirScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // --- ordain: Taksin as a monk at Wat Chaeng, calm morning light ---
-const OrdainScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const OrdainScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.watArun} start={start} end={end} sky={["#f0b880", "#fbe9c8"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>
@@ -483,7 +483,7 @@ const OrdainScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // --- sanrules: Phraya San presides from a raised dais; officials prostrate ---
-const SanCourtScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const SanCourtScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#4a2418", "#8a4a22"]} accent={RED} warm={0.1}>
     {(g, pan) => (
       <g>

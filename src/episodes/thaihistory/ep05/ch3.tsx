@@ -84,7 +84,7 @@ const Border = ({ faint, solid }: { faint: number; solid: number }) => {
 // --- illustrated panels (style v2) ---------------------------------------------------------------------------
 
 // A herald reads the decree under a big tree in a market square; villagers gather.
-const DecreeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const DecreeScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#6a9ac0", "#f0d8a8"]} accent={GOLD}>
     {(g, pan, lt) => (
       <g>
@@ -103,7 +103,7 @@ const DecreeScene = ({ id, start, end }: { id: string; start: number; end: numbe
 );
 
 // A mother and child in a house yard; the chain on the ground breaks and falls away as the word "ไท" lands.
-const FreedomScene = ({ id, start, end, free }: { id: string; start: number; end: number; free: number }) => {
+export const FreedomScene = ({ id, start, end, free }: { id: string; start: number; end: number; free: number }) => {
   const frame = useCurrentFrame();
   const br = interpolate(frame, [free - 6, free + 10], [0, 1], clamp);
   return (
@@ -125,7 +125,7 @@ const FreedomScene = ({ id, start, end, free }: { id: string; start: number; end
 };
 
 // Workers string a telegraph wire across the rice fields; a spark runs along it.
-const TelegraphScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const TelegraphScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#7ab0d8", "#f4e0b0"]} accent={GOLD}>
     {(g, pan, lt) => {
       const xs = [0.06, 0.38, 0.7, 1.02].map((f) => g.x + g.W * f + pan * 0.6);
@@ -145,7 +145,7 @@ const TelegraphScene = ({ id, start, end }: { id: string; start: number; end: nu
 );
 
 // The new post office: a postman with a satchel walks past a red letter box.
-const PostScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const PostScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#8ab8e0", "#f8ecd0"]} accent={GOLD}>
     {(g, pan, lt) => (
       <g>
@@ -163,7 +163,7 @@ const PostScene = ({ id, start, end }: { id: string; start: number; end: number 
 );
 
 // Officials walk into the new ministry buildings; twelve signboards light up on "สิบสอง".
-const MinistryScene = ({ id, start, end, twelve }: { id: string; start: number; end: number; twelve: number }) => {
+export const MinistryScene = ({ id, start, end, twelve }: { id: string; start: number; end: number; twelve: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#6a9ad0", "#f8e8c8"]} accent={GOLD}>
@@ -184,7 +184,7 @@ const MinistryScene = ({ id, start, end, twelve }: { id: string; start: number; 
 };
 
 // Lamp-lit office of the Interior Ministry: a big map of Siam on the wall, clerks with documents.
-const InteriorScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const InteriorScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#3a2414", "#6a4a2a"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -205,7 +205,7 @@ const InteriorScene = ({ id, start, end }: { id: string; start: number; end: num
 );
 
 // A commissioner from Bangkok rides up to a provincial town gate under the Siamese flag.
-const CommissionerScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const CommissionerScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.korat} start={start} end={end} sky={["#7aa0c8", "#f0d8a0"]} accent={GOLD}>
     {(g, pan, lt) => (
       <g>
@@ -225,7 +225,7 @@ const CommissionerScene = ({ id, start, end }: { id: string; start: number; end:
 );
 
 // Frontier in jungle mist: a foreign officer plants a flag beside a leaning, unmarked post.
-const FrontierScene = ({ id, start, end, plant }: { id: string; start: number; end: number; plant: number }) => {
+export const FrontierScene = ({ id, start, end, plant }: { id: string; start: number; end: number; plant: number }) => {
   const frame = useCurrentFrame();
   const up = interpolate(frame, [plant - 10, plant + 10], [0, 1], clamp);
   return (
@@ -248,7 +248,7 @@ const FrontierScene = ({ id, start, end, plant }: { id: string; start: number; e
 };
 
 // Surveyors on a hill: theodolite, a striped pole raised on the ridge.
-const SurveyScene = ({ id, start, end, raise }: { id: string; start: number; end: number; raise: number }) => {
+export const SurveyScene = ({ id, start, end, raise }: { id: string; start: number; end: number; raise: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={[101.2, 17.9]} start={start} end={end} sky={["#5a8ac0", "#f0e0b8"]} accent={GOLD}>
@@ -267,7 +267,7 @@ const SurveyScene = ({ id, start, end, raise }: { id: string; start: number; end
 };
 
 // The first steam train crosses the rice plain north of Bangkok.
-const TrainScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const TrainScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.ayut} start={start} end={end} sky={["#7ab0e0", "#f8e8c0"]} accent={GOLD}>
     {(g, pan, lt) => (
       <g>
@@ -282,7 +282,7 @@ const TrainScene = ({ id, start, end }: { id: string; start: number; end: number
 );
 
 // Soldiers in white tunics board the train at a station platform.
-const BoardScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const BoardScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.korat} start={start} end={end} sky={["#6a90c0", "#f0d8b0"]} accent={RED}>
     {(g, pan) => (
       <g>
@@ -298,7 +298,7 @@ const BoardScene = ({ id, start, end }: { id: string; start: number; end: number
 );
 
 // Advisers from many countries around one council table, each with a small flag.
-const CouncilScene = ({ id, start, end, many }: { id: string; start: number; end: number; many: number }) => {
+export const CouncilScene = ({ id, start, end, many }: { id: string; start: number; end: number; many: number }) => {
   const frame = useCurrentFrame();
   const flags = ["be", "dk", "uk", "de", "us", "fr"] as const;
   return (

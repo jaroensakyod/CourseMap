@@ -24,6 +24,8 @@ export const LayoutCtx = createContext({ compact: false, panelScale: 1, panelHid
 // House-standard clear layout values: camera zoomed out and its focus raised into the band between the compact head
 // card and the shrunk panel. Episodes: cam.scale × camScale, <MapFrame focusY>, LayoutCtx { compact, panelScale,
 // panelHide: panelHideAt(keys, frame) } — see thaihistory/ep05/Ep.tsx (Ep05Clear).
+// Storyboard: a scene built for one place can be reused anywhere — its leader line then points at this anchor.
+export const AnchorCtx = createContext<[number, number] | null>(null);
 export const CLEAR = { camScale: 0.8, focusY: 0.444, panelScale: 0.8 };
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -143,16 +145,16 @@ export const FloodLayer = ({ at: c, radius, k }: { at: [number, number]; radius:
 };
 
 // Top bar: channel badge, chapter, year chip.
-export const TopBar = ({ chapter, year }: { chapter: string; year: string }) => {
+export const TopBar = ({ chapter, year, channel = "ประวัติศาสตร์บนแผนที่" }: { chapter: string; year: string; channel?: string }) => {
   const { width, height } = useVideoConfig();
   const s = Math.min(width, height) / 1080;
   return (
     <div style={{ position: "absolute", top: height * 0.045, left: 50 * s, right: 50 * s, display: "flex", alignItems: "center", justifyContent: "space-between", fontFamily: font, color: "#fff", lineHeight: 1.4 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 14 * s }}>
-        <div style={{ background: RED, padding: `${4 * s}px ${16 * s}px`, borderRadius: 8 * s, fontWeight: 900, fontSize: 32 * s }}>ประวัติศาสตร์บนแผนที่</div>
+        <div style={{ background: RED, padding: `${4 * s}px ${16 * s}px`, borderRadius: 8 * s, fontWeight: 900, fontSize: 32 * s }}>{channel}</div>
         <div style={{ fontSize: 30 * s, fontWeight: 700, opacity: 0.92 }}>{chapter}</div>
       </div>
-      <div style={{ background: "rgba(8,14,26,0.8)", border: `${2 * s}px solid rgba(255,255,255,0.25)`, padding: `${2 * s}px ${16 * s}px`, borderRadius: 30 * s, fontWeight: 700, fontSize: 30 * s }}>พ.ศ. {year}</div>
+      {year && <div style={{ background: "rgba(8,14,26,0.8)", border: `${2 * s}px solid rgba(255,255,255,0.25)`, padding: `${2 * s}px ${16 * s}px`, borderRadius: 30 * s, fontWeight: 700, fontSize: 30 * s }}>{/^d/.test(year) ? `พ.ศ. ${year}` : year}</div>}
     </div>
   );
 };
@@ -218,11 +220,12 @@ export const CAPTION_TOP = 0.765;
 // Consecutive panels must overlap: pass the next panel's start + 14 as `end`.
 export const Panel = ({ id, anchor, start, end, sky, accent = RED, children }: { id: string; anchor: [number, number]; start: number; end: number; sky: [string, string]; accent?: string; children: (g: InsetGeom) => ReactNode }) => {
   const { panelScale, panelHide } = useContext(LayoutCtx);
+  const forced = useContext(AnchorCtx);
   const { height } = useVideoConfig();
   if (panelHide >= 0.999) return null;
   return (
     <g opacity={1 - panelHide} transform={panelHide > 0 ? `translate(0,${panelHide * panelHide * height * 0.06})` : undefined}>
-    <InsetPanel id={id} anchor={anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={PANEL_H} boxScale={panelScale}>
+    <InsetPanel id={id} anchor={forced ?? anchor} label="ภาพประกอบ" start={start} end={end} sky={sky} font={font} accent={accent} top={PANEL_TOP} panelHeight={PANEL_H} boxScale={panelScale}>
       {children}
     </InsetPanel>
     </g>

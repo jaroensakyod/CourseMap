@@ -64,7 +64,7 @@ export const count = (from: number, n: number, len = 30) => (f: number) => Math.
 type Sc = { id: string; start: number; end: number };
 
 // Recap: the Burmese column marches away from Phitsanulok's walls at dawn; Siamese banners on the ramparts.
-const RetreatScene = ({ id, start, end }: Sc) => (
+export const RetreatScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PLK} start={start} end={end} sky={["#d98a52", "#f6d9a0"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => {
       const away = lt * 0.9 * g.s;
@@ -89,7 +89,7 @@ const RetreatScene = ({ id, start, end }: Sc) => (
 );
 
 // Thonburi at its height: Wat Chaeng's prang, the palace wall, boats busy on the river at sunrise.
-const CapitalScene = ({ id, start, end }: Sc) => (
+export const CapitalScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#f0a860", "#fbe6b8"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => (
       <g>
@@ -109,7 +109,7 @@ const CapitalScene = ({ id, start, end }: Sc) => (
 );
 
 // Night on the Mekong: Vientiane's troops rush the camp of Phra Wo; fires in the stockade.
-const RaidScene = ({ id, start, end, hits }: Sc & { hits: number[] }) => (
+export const RaidScene = ({ id, start, end, hits }: Sc & { hits: number[] }) => (
   <V2 id={id} anchor={PL.donmot} start={start} end={end} sky={["#0b1026", "#3a1f2a"]} accent={RED} hits={hits} warm={0.04}>
     {(g, pan, lt) => {
       const rush = lt * 1.2 * g.s;
@@ -188,7 +188,7 @@ const SiegeScene = ({ id, start, end }: Sc) => {
 };
 
 // The Emerald Buddha on its gilt pavilion; monks kneel on both sides in temple lamplight.
-const EmeraldScene = ({ id, start, end }: Sc) => (
+export const EmeraldScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.vientiane} start={start} end={end} sky={["#2a120c", "#5a2a18"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -208,7 +208,7 @@ const EmeraldScene = ({ id, start, end }: Sc) => (
 );
 
 // The royal barge brings the Emerald Buddha down the river; boats with banners, crowds on the bank.
-const BargeScene = ({ id, start, end }: Sc) => (
+export const BargeScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.saraburi} start={start} end={end} sky={["#7ab0d0", "#f4e2b8"]} accent={GOLD} warm={0.08}>
     {(g, pan, lt) => {
       const go = lt * 0.8 * g.s;
@@ -231,7 +231,7 @@ const BargeScene = ({ id, start, end }: Sc) => (
 );
 
 // Night festival at Wat Chaeng: fireworks over the prang, lanterns, crowds on the bank.
-const FestivalScene = ({ id, start, end }: Sc) => (
+export const FestivalScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.watArun} start={start} end={end} sky={["#0a1430", "#3a2a5a"]} accent={GOLD} warm={0.05}>
     {(g, pan) => (
       <g>
@@ -279,7 +279,7 @@ const InvestitureScene = ({ id, start, end }: Sc) => {
 };
 
 // The highest rank: Chakri seated under a tiered parasol, lesser nobles prostrate in rows before him.
-const RankScene = ({ id, start, end }: Sc) => (
+export const RankScene = ({ id, start, end }: Sc) => (
   <V2 id={id} anchor={PL.thon} start={start} end={end} sky={["#e0a060", "#f8e0b0"]} accent={GOLD} warm={0.1}>
     {(g, pan) => (
       <g>

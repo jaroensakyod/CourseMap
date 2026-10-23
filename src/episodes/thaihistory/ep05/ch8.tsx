@@ -136,7 +136,7 @@ const Poll3 = () => {
 };
 
 // Lamp-lit desk with a map of the region, two officials studying it — the question again.
-const QuestionDeskScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const QuestionDeskScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#1a120c", "#3a2414"]} accent={GOLD} warm={0.12}>
     {(g, pan) => (
       <g>
@@ -188,7 +188,7 @@ const Locomotive = ({ x, y, s }: { x: number; y: number; s: number }) => {
     </g>
   );
 };
-const ReformEchoScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
+export const ReformEchoScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => (
   <V2 id={id} anchor={PL.ayut} start={start} end={end} sky={["#7aa8d0", "#f8e8c0"]} accent={GOLD} hits={hits} warm={0.1}>
     {(g, pan, lt) => {
       const tx = interpolate(lt, [0, end - start], [-0.1, 0.75], clamp);
@@ -213,7 +213,7 @@ const ReformEchoScene = ({ id, start, end, hits }: { id: string; start: number; 
 );
 
 // Diplomacy: British envoy, Siamese minister and French envoy around one table under three flags.
-const DiplomacyScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const DiplomacyScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#3a2a1a", "#8a6a3a"]} accent={GOLD} hits={hits} warm={0.12}>
@@ -240,7 +240,7 @@ const DiplomacyScene = ({ id, start, end, hits }: { id: string; start: number; e
 };
 
 // A balance: the sacks of the edge lands and of the heartland — Siam gives up the first to keep the second.
-const ScaleScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
+export const ScaleScene = ({ id, start, end, hits }: { id: string; start: number; end: number; hits: number[] }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={PL.bkk} start={start} end={end} sky={["#2a1a12", "#6a4020"]} accent={GOLD} hits={hits} warm={0.12}>
@@ -267,7 +267,7 @@ const ScaleScene = ({ id, start, end, hits }: { id: string; start: number; end: 
 };
 
 // The palace at dusk: candles, mourners in white kneeling, gold light slowly dimming (no likeness drawn).
-const DuskPalaceScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
+export const DuskPalaceScene = ({ id, start, end }: { id: string; start: number; end: number }) => (
   <V2 id={id} anchor={PL.palace} start={start} end={end} sky={["#1a1830", "#a0603a"]} accent={GOLD} warm={0.1}>
     {(g, pan, lt) => {
       const dim = interpolate(lt, [0, end - start], [1, 0.35], clamp);
@@ -301,7 +301,7 @@ const Statue = ({ x, y, s }: { x: number; y: number; s: number }) => (
     </g>
   </g>
 );
-const PlazaScene = ({ id, start, end, evening = false, hits = [] }: { id: string; start: number; end: number; evening?: boolean; hits?: number[] }) => (
+export const PlazaScene = ({ id, start, end, evening = false, hits = [] }: { id: string; start: number; end: number; evening?: boolean; hits?: number[] }) => (
   <V2 id={id} anchor={DUSIT} start={start} end={end} sky={evening ? ["#1a1a3a", "#c06a3a"] : ["#8ab4d8", "#ffe8c0"]} accent={GOLD} hits={hits} warm={evening ? 0.1 : 0.12}>
     {(g, pan, lt) => (
       <g>
@@ -324,7 +324,7 @@ const PlazaScene = ({ id, start, end, evening = false, hits = [] }: { id: string
 );
 
 // Close: offerings at the plinth — garlands, candles, incense smoke.
-const OfferingScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
+export const OfferingScene = ({ id, start, end }: { id: string; start: number; end: number }) => {
   const frame = useCurrentFrame();
   return (
     <V2 id={id} anchor={DUSIT} start={start} end={end} sky={["#f0c890", "#fff0d0"]} accent={GOLD} warm={0.14}>

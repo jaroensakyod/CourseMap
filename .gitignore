@@ -1,0 +1,14 @@
+node_modules
+out
+whisper.cpp
+whisper-cuda
+public/raster/
+costs.jsonl
+.env
+.env.*
+!.env.example
+public/audio/
+public/data/
+public/sfx/
+gl-test.mp4
+*.parts/

@@ -1,0 +1,53 @@
+{
+  "name": "coursemap",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio",
+    "still": "remotion still",
+    "render": "remotion render",
+    "data": "node scripts/fetch-data.mjs",
+    "typecheck": "tsc --noEmit",
+    "tts": "node scripts/tts-gemini.mjs",
+    "transcribe": "node scripts/transcribe.mjs",
+    "align": "node scripts/align.mjs",
+    "srt": "node scripts/srt.mjs",
+    "describe": "node scripts/describe.mjs",
+    "thumb": "node scripts/thumb.mjs",
+    "sfx": "node scripts/sfx.mjs",
+    "loudness": "node scripts/loudness.mjs",
+    "render:batch": "node scripts/render-batch.mjs",
+    "render:chunks": "node scripts/render-chunks.mjs",
+    "image": "node scripts/image-gemini.mjs",
+    "imagery": "node scripts/fetch-imagery.mjs",
+    "dem": "node scripts/fetch-dem.mjs",
+    "osm": "node scripts/fetch-osm.mjs",
+    "rivers": "node scripts/fetch-rivers.mjs",
+    "history": "node scripts/fetch-history.mjs",
+    "sfx-lib": "node scripts/sfx-lib.mjs",
+    "cost": "node scripts/cost-report.mjs",
+    "setup:data": "node setup/data.mjs",
+    "setup:whisper": "node setup/whisper.mjs",
+    "doctor": "node setup/doctor.mjs",
+    "demo": "node setup/demo.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/google-fonts": "4.0.537",
+    "d3-geo": "^3.1.1",
+    "geotiff": "^2.1.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remotion": "4.0.537",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@remotion/install-whisper-cpp": "4.0.537",
+    "@types/d3-geo": "^3.1.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.1.0",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "typescript": "^5.8.3"
+  }
+}
